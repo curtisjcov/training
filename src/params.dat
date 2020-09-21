@@ -1,0 +1,4 @@
+#params for code.c file
+
+tf= 1
+delt = .0001
