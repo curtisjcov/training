@@ -1,25 +1,22 @@
 #include <iostream>
 #include <fstream>
-
+#include <sstream>
+#include <string>
 using namespace std;
 
 int main() {
-	ifstream input;
-	input.open("params.dat")
+	double time_end = 1;
+        double del_t = .000001;
 	
-	double tf  = 1;
-	double delt = .00001;
 	double xi = 1;
 	double x = xi;
 	
-	for (double i=0; i<=tf; i+=delt)
-	{
-		x= x*(1-3*delt);
-	}
-	cout << x;
 	ofstream output;
 	output.open ("output.dat");
-	output << "x = " << x << '\n';
+	 for (double i=0; i<=time_end; i+=del_t)
+        {
+                x= x*(1-3*del_t);
+		output << i << ' ' << x << '\n';
+        }
 	output.close();
-	
-}
+}	
